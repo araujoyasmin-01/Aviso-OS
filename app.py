@@ -58,8 +58,14 @@ def exportarDoc():
     for index, row in df.iterrows(): 
         doc.add_paragraph(f"Razão social {row['Razão social']}")
         doc.add_paragraph(f"Solicitante: {row['Solicitante']}")
-        doc.add_paragraph(f"OS: {row['Numero']}")
-        doc.add_paragraph(f"Solicitação: {row['Solicitação']}")
+        doc.add_paragraph(f"Módulo: {row['Módulo']}")
+        doc.add_paragraph(f"DLL:  {row['DLL']}")
+        p = doc.add_paragraph()
+        p.add_run('OS: ').bold = True
+        p.add_run(f"{row['Numero']}")
+        s = doc.add_paragraph()
+        s.add_run('Solicitação: ').bold = True
+        s.add_run(f"{row['Solicitação']}")
         doc.add_paragraph("\n" + "-" * 30 + "\n")  # Separador entre registros
     doc.save(pastaDestino) #salvar arquivo em pasta especificada por usuário
 
