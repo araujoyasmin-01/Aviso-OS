@@ -1,5 +1,6 @@
 from docx import Document
 import pandas as pd
+import tkinter as tk
 import customtkinter as ctk
 from tkinter import filedialog
 from CTkMessagebox import CTkMessagebox
@@ -73,8 +74,10 @@ def exportarDoc():
 
 app = ctk.CTk()
 app.title('Aviso de OS')
+app.iconbitmap('img//definicoes.ico')
 app.geometry('450x200')
 app.resizable(False, False)
+
 
 # Título da tela
 tituloTela = ctk.CTkLabel(app, text="Aviso de OS", font=('Arial', 25))
